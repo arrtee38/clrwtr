@@ -1,30 +1,30 @@
 module.exports = mongoose => {
-    const Pool = mongoose.model(
-      "pool",
-      mongoose.Schema(
-        {
-          name: String,
-          location: String,
-          yearBuilt: Integer,
-          age: Integer,
-          type: String,
-          shape: String,
-          volume: Integer,
-          finish: String,
-          features: [],
-          setpoints: {
-            freeChlorine: Integer,
-            combinedChlorine: Integer,
-            totalChlorine: Integer,
-            pH: Integer,
-            alkalinity: Integer,
-            hardness: Integer,
-            stabalizer: Integer,
-            salt: Integer
-          },
+  const Pool = mongoose.model(
+    "pool",
+    mongoose.Schema(
+      {
+        name: String,
+        location: String,
+        yearBuilt: Number,
+        age: Number,
+        type: String,
+        shape: String,
+        volume: Number,
+        finish: String,
+        features: [],
+        setpoints: {
+          freeChlorine: Number,
+          combinedChlorine: Number,
+          totalChlorine: Number,
+          pH: Number,
+          alkalinity: Number,
+          hardness: Number,
+          stabalizer: Number,
+          salt: Number
         },
-        { timestamps: true }
-      )
-    );
-    return Pool;
-  };
+      },
+      { timestamps: true }
+    )
+  );
+  return Pool;
+};

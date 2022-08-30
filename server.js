@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
@@ -11,16 +10,16 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
-app.use(bodyParser.json());
+app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+// parse lrequests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
 // database info
 const db = require("./app/models");
 db.mongoose
   .connect(db.url, {
-    useNewUrlParser: true,
+    useNewUrlParser: true, 
     useUnifiedTopology: true
   })
   .then(() => {
